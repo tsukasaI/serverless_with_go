@@ -5,6 +5,7 @@ go 1.21.3
 require (
 	github.com/aws/aws-lambda-go v1.41.0
 	github.com/awslabs/aws-lambda-go-api-proxy v0.16.0
+	github.com/caarlos0/env/v10 v10.0.0
 	github.com/gin-gonic/gin v1.9.1
 )
 

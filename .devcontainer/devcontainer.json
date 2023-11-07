@@ -7,7 +7,10 @@
 	"features": {
 		"ghcr.io/devcontainers/features/git:1": {},
 		"ghcr.io/devcontainers-contrib/features/npm-package:1": {},
-		"ghcr.io/devcontainers-contrib/features/serverless:2": {}
+		"ghcr.io/devcontainers-contrib/features/serverless:2": {},
+		"docker-from-docker": {
+			"version": "latest"
+		}
 	},
 	"customizations": {
 		"vscode": {

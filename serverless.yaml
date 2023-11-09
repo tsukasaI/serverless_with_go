@@ -37,7 +37,7 @@ functions:
     # handler: main.go
     # handler: handler/bootstrap
     handler: bootstrap
-    timeout: 10
+    timeout: 100
     events:
       - http:
           path: ping

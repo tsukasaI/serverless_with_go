@@ -2,7 +2,7 @@ service: aws-lambda-go-api-proxy-gin
 
 provider:
   name: aws
-  # architecture: arm64  # Lambda で ARM プロセッサを使用
+  architecture: arm64  # Lambda で ARM プロセッサを使用
   runtime: provided.al2
   # stage: ${opt:stage, self:custom.defaultStage}
   region: ap-northeast-1
@@ -24,6 +24,8 @@ custom:
     # cmd: GOARCH=amd64 GOOS=linux go build -ldflags="-s -w"
     supportedRuntimes: [ "provided.al2" ]
     buildProvidedRuntimeAsBootstrap: true
+  serverless-offline:
+    useDocker: true
 
 package:
   individually: true
@@ -32,9 +34,10 @@ package:
 
 functions:
   api:
-    handler: main.go
+    # handler: main.go
     # handler: handler/bootstrap
-    timeout: 900
+    handler: bootstrap
+    timeout: 10
     events:
       - http:
           path: ping
@@ -57,3 +60,5 @@ functions:
 #       - http:
 #           path: ping
 #           method: get
+
+# env GOARCH=amd64 GOOS=linux go build -ldflags="-s -w" -o bin/billing billing/main.go

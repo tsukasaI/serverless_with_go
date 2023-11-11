@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "GOARCH=arm64 GOOS=linux go build -o bootstrap main.go",
     "build:amd": "GOARCH=amd64 GOOS=linux go build -o bootstrap main.go",
-    "dev": "sls offline"
+    "dev": "serverless offline"
   },
   "devDependencies": {
     "serverless-go-plugin": "^2.2.0",

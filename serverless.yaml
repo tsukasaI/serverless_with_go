@@ -3,6 +3,8 @@ service: aws-lambda-go-api-proxy-gin
 provider:
   name: aws
   architecture: arm64  # Lambda で ARM プロセッサを使用
+  environment:
+    APP: mySystem
   runtime: provided.al2
   # stage: ${opt:stage, self:custom.defaultStage}
   region: ap-northeast-1
@@ -43,22 +45,5 @@ functions:
           path: ping
           method: get
 
-# package:
-#   exclude:
-#     - ./**
-#   include:
-#     - ./bin/**
-
-# custom:
-#   defaultStage: dev
-
-# functions:
-#   api:
-#     handler: handler/main
-#     timeout: 900
-#     events:
-#       - http:
-#           path: ping
-#           method: get
 
 # env GOARCH=amd64 GOOS=linux go build -ldflags="-s -w" -o bin/billing billing/main.go
